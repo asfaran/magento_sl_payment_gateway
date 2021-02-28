@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Supersavings_Pay>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Supersavings_Pay>
+    </modules>
+</config> 

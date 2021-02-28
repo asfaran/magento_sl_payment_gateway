@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<config>
+    <!-- Some XML Definition -->  
+    <global>  
+<blocks>
+<payment>  
+        <class>Sampath_Pay_Block</class>  
+        <class>Mage_Payment_Block</class>  
+    </payment>  
+</blocks>
+            <models>  
+                <Pay>  
+                    <class>Sampath_Pay_Model</class>  
+                    <resourcemodel>pay_mysql4</resourcemodel>  
+                </Pay>  
+                <pay_mysql4>  
+                    <class>Sampath_Pay_Model_Mysql4</class>  
+                    <entities>  
+                        <pay>  
+                            pay<table></table>  
+                        </pay>  
+                    </entities>  
+                </pay_mysql4>  
+            </models>  
+    <!-- More XML Definition -->  
+    </global>  
+	    <default>  
+        <payment>  
+            <pay>  
+                <active>1</active> <!-- you might want to disable this! -->  
+                <model>pay/payment</model>  
+                <order_status>1</order_status>  
+                  
+                <!-- you might increast the allowed credit cards by adding them as csv -->  
+                <cctypes>VI,MC</cctypes>  
+                <payment_action>authorize</payment_action> <!-- later this one will define the name of the method -->  
+                <allowspecific>0</allowspecific>  
+            </pay>  
+        </payment>  
+    </default>  
+</config>
+
+
+<?xml version="1.0"?>
+<config>

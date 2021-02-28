@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+ 
+<config>
+    <modules>
+        <supersavings_Redirect>
+            <version>0.1.0</version>
+        </supersavings_Redirect>
+    </modules>   
+ 
+    <frontend>
+        <routers>
+            <supersavings_redirect>
+                <use>standard</use>
+                <args>
+                    <module>Supersavings_Redirect</module>
+                    <frontName>redirect</frontName>
+                </args>
+            </supersavings_redirect>
+        </routers>
+        <layout>
+			<updates>
+				<redirect>
+					<file>redirect.xml</file>
+				</redirect>
+			</updates>
+		</layout>
+    </frontend>    
+</config>

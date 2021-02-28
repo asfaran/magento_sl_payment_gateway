@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+ 
+<config>
+    <modules>
+        <supersavings_Pgrequest>
+            <version>0.1.0</version>
+        </supersavings_Pgrequest>
+    </modules>   
+ 
+    <frontend>
+        <routers>
+            <supersavings_pgrequest>
+                <use>standard</use>
+                <args>
+                    <module>Supersavings_Pgrequest</module>
+                    <frontName>pgrequest</frontName>
+                </args>
+            </supersavings_pgrequest>
+        </routers>
+        <layout>
+			<updates>
+				<pgrequest>
+					<file>prpgrequest.xml</file>
+				</pgrequest>
+			</updates>
+		</layout>
+    </frontend>    
+</config>

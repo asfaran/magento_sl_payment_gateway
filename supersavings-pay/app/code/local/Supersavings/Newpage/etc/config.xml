@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+ 
+<config>
+    <modules>
+        <supersavings_Newpage>
+            <version>0.1.0</version>
+        </supersavings_Newpage>
+    </modules>   
+ 
+    <frontend>
+        <routers>
+            <supersavings_newpage>
+                <use>standard</use>
+                <args>
+                    <module>Supersavings_Newpage</module>
+                    <frontName>newpage</frontName>
+                </args>
+            </supersavings_newpage>
+        </routers>
+        <layout>
+			<updates>
+				<newpage>
+					<file>newpage.xml</file>
+				</newpage>
+			</updates>
+		</layout>
+    </frontend>    
+</config>

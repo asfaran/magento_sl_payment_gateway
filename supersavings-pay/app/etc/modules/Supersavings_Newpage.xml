@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+ 
+<config>
+    <modules>
+        <Supersavings_Newpage>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Supersavings_Newpage>
+    </modules>    
+</config>

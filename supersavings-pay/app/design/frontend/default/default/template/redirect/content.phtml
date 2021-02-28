@@ -1,0 +1,59 @@
+<?php  $paymentid=$_GET['PaymentID'];
+
+
+	$currencyCode="144";
+$pieces = explode("~", $paymentid);
+$totalItems= $pieces[0]; 
+$subTotal= $pieces[1]; 
+$grandTotal= $pieces[2];
+$orderid= $pieces[3];
+$grandTotalfinal= $grandTotal * 100 ;
+
+if(Mage::getSingleton('customer/session')->isLoggedIn()):
+	$name = Mage::getSingleton('customer/session')->getCustomer()->getName();
+	
+endif;
+$last_order_increment_id = Mage::getModel("sales/order")->getCollection()->getLastItem()->getIncrementId();
+?>
+<body>
+<center>
+<br><br>
+	<h3>Confirm your payment</h3>
+	<br />&nbsp;<br />
+	<form name="pgtest" method="post" action="pgrequest">
+
+
+
+		<table >
+			<tr>
+				<td  width="200px"><div align="justify">Amount:</div></td>
+                  <td><div align="right">Rs.</div></td>
+			  <td><?php  echo $grandTotal; ?><input type="hidden" name="amount" value="<?php  echo $grandTotalfinal; ?>"   /></td>
+			</tr>
+			<tr>
+				<td colspan="3"><input type="hidden" name="currency_code" value="<?php  echo $currencyCode; ?>"  /></td>
+			</tr>
+			<tr>
+				<td colspan="2">Merchant Reference No</td>
+				<td><?php  echo $last_order_increment_id ; ?><input type="hidden" name="merchant_reference_no" value="<?php  echo $last_order_increment_id ; ?>"  ></td>
+			</tr>
+			<tr>
+				<td colspan="2">Order Description:</td>
+				<td><?php echo $totalItems."  Items";?><input type="hidden" name="order_desc" value="<?php echo $totalItems."  Items";?>"  ></td>
+			</tr>
+			<tr>
+			   <td align="center" colspan="3"  >
+					<input type="hidden" name="perform" value="initiatePaymentCapture#sale" /> 
+				&nbsp;&nbsp;&nbsp;
+				</td>	
+			</tr>
+			<tr>
+				<td align="center" colspan="3">
+				<div align="center"><br><br><br><input type="submit" value="Confirm"    /></div>
+				</td>
+			</tr>
+		</table><br><br><br><br><br><br>
+	</form>		
+</center>
+</body>
+
